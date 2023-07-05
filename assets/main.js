@@ -3,7 +3,13 @@ let num = 0
 let yourCount = 0
 let opponentCount = 0
 
-document.querySelector(".opponent-cards").innerHTML = `<span><img id="to-reveal" src="assets/black-jack/cards/back.png" alt=""></span>`
+window.addEventListener("load",function(){
+    document.querySelectorAll("img").forEach((e)=>{
+        e.classList.remove("hoverEff")
+    })
+})
+
+document.querySelector(".opponent-cards").innerHTML = `<span><img class="hoverEff" id="to-reveal" src="assets/black-jack/cards/back.png" alt=""></span>`
 
 let temp = [
 `${path}2-C.png`,
@@ -66,13 +72,13 @@ for(let i = 0; i < 2; i++){
 
     num = Math.floor(Math.random() * (cards.length))
     document.querySelector(".opponent-cards").innerHTML += 
-    `<span><img src="${cards[num]}" alt=""></span>`
+    `<span><img class="hoverEff" src="${cards[num]}" alt=""></span>`
     opponentCount += parseInt(calculateCardValue(cards[num][24], cards[num][25]))
     cards.splice(num, 1); 
 
     num = Math.floor(Math.random() * (cards.length))
     document.querySelector(".your-cards").innerHTML += 
-    `<span><img src="${cards[num]}" alt=""></span>`
+    `<span><img class="hoverEff" src="${cards[num]}" alt=""></span>`
     yourCount += parseInt(calculateCardValue(cards[num][24], cards[num][25]))
     cards.splice(num, 1); 
 }
