@@ -17,6 +17,20 @@ body{
     position: relative;
 }
 
+.hoverEff{
+    background-color: rgb(11, 11, 15);
+    animation: animate infinite 2s linear;
+}
+
+@keyframes animate {
+    0%{
+        background-color: rgba(11, 11, 15, 0.409);
+    }
+    100%{
+        background-color: rgb(11, 11, 15);
+    }
+}
+
 button{
     cursor: pointer;
 }
